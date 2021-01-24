@@ -66,13 +66,24 @@ module.exports = {
         // templates: path.join(__dirname, 'src/components/templates'),
         // sections: path.join(__dirname, 'src/components/sections'),
         assets: path.join(__dirname, 'src/assets'),
-        // routes: path.join(__dirname, 'src/routes'),
+        routes: path.join(__dirname, 'src/routes'),
         vendors: path.join(__dirname, 'src/vendors'),
         // utils: path.join(__dirname, 'src/utils'),
         // contexts: path.join(__dirname, 'src/contexts'),
         // providers: path.join(__dirname, 'src/providers'),
         // hooks: path.join(__dirname, 'src/hooks'),
         // helpers: path.join(__dirname, 'src/helpers'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            variants: [`400`, `700`],
+          },
+        ],
       },
     },
     {

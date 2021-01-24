@@ -25,6 +25,10 @@ export const font = {
     paragraph: '1.7rem',
     button: '1.5rem',
   },
+  styles: {
+    regular: '400',
+    bold: '700',
+  },
 };
 
 export const mq = Object.keys(breakpoints).reduce((acc, breakpoint) => {
