@@ -80,8 +80,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Lato`,
-            variants: [`400`, `700`],
+            family: `Montserrat`,
+            variants: [`400`, `700`, `900`],
           },
         ],
       },
