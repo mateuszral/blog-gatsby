@@ -12,8 +12,11 @@ const NavigationWrapper = styled.nav`
   top: 0;
   left: 0;
   z-index: ${({ theme }) => theme.zIndex.level1};
+  transform: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? 'translateX(0%)' : 'translateX(100%)')};
+  transition: transform 0.3s ease-in-out;
 
   ${({ theme }) => theme.mq.bigTablet} {
+    transform: none;
     padding: 10px 30px;
     display: flex;
     align-items: center;
@@ -30,17 +33,14 @@ const NavigationList = styled.ul`
   width: 100%;
   height: 100vh;
   list-style: none;
-  transform: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? 'translateX(0%)' : 'translateX(100%)')};
   background-color: ${({ theme }) => theme.black};
   color: ${({ theme }) => theme.white};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease-in-out;
 
   ${({ theme }) => theme.mq.bigTablet} {
-    transform: none;
     background-color: ${({ theme }) => theme.white};
     color: ${({ theme }) => theme.black};
     height: initial;
@@ -72,36 +72,38 @@ const Navigation = () => {
   };
 
   return (
-    <NavigationWrapper>
-      <NavigationList isMobileMenuOpen={isMobileMenuOpen}>
-        <StyledLogo>
-          <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.home}>
-            HATTA
-          </StyledLink>
-        </StyledLogo>
-        <NavigationListItem>
-          <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.about}>
-            about
-          </StyledLink>
-        </NavigationListItem>
-        <NavigationListItem>
-          <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.articles}>
-            articles
-          </StyledLink>
-        </NavigationListItem>
-        <NavigationListItem>
-          <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.gallery}>
-            gallery
-          </StyledLink>
-        </NavigationListItem>
-        <NavigationListItem>
-          <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.contact}>
-            contact
-          </StyledLink>
-        </NavigationListItem>
-      </NavigationList>
+    <>
+      <NavigationWrapper isMobileMenuOpen={isMobileMenuOpen}>
+        <NavigationList>
+          <StyledLogo>
+            <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.home}>
+              HATTA
+            </StyledLink>
+          </StyledLogo>
+          <NavigationListItem>
+            <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.about}>
+              about
+            </StyledLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.articles}>
+              articles
+            </StyledLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.gallery}>
+              gallery
+            </StyledLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <StyledLink onClick={() => setIsMobileMenuOpen(false)} to={routes.contact}>
+              contact
+            </StyledLink>
+          </NavigationListItem>
+        </NavigationList>
+      </NavigationWrapper>
       <Hamburger handleLinkClick={handleLinkClick} isMobileMenuOpen={isMobileMenuOpen} />
-    </NavigationWrapper>
+    </>
   );
 };
 

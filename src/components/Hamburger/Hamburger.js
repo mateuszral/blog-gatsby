@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledHamburger = styled.button`
+  position: fixed;
+  top: 20px;
+  right: 20px;
   padding: 10px;
   display: inline-block;
   cursor: pointer;
@@ -10,9 +13,7 @@ const StyledHamburger = styled.button`
   border: 0;
   margin: 0;
   transition: transform 0.3s ease-in-out;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  z-index: ${({ theme }) => theme.zIndex.level1};
 
   ${({ theme }) => theme.mq.bigTablet} {
     display: none;
