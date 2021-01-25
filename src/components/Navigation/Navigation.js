@@ -11,6 +11,7 @@ const NavigationWrapper = styled.nav`
   width: 100%;
   top: 0;
   left: 0;
+  z-index: ${({ theme }) => theme.zIndex.level1};
 
   ${({ theme }) => theme.mq.bigTablet} {
     padding: 10px 30px;
