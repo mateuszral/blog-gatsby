@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 1.6rem;
     font-family: 'Montserrat', sans-serif;
-    padding: 100px 0;
+    padding: 100px 0 0;
   }
 
   h1, h2, h3, h4, h5, span {
