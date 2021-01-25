@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';
 
@@ -17,5 +18,9 @@ const MainTemplate = ({ children }) => (
     </ThemeProvider>
   </>
 );
+
+MainTemplate.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default MainTemplate;
