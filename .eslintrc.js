@@ -16,7 +16,7 @@ module.exports = {
     'no-useless-catch': 0,
     'lines-between-class-members': 0,
     'eol-last': 'error',
-    'react/prop-types': 0,
+    'react/prop-types': 'warn',
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': 0,
     'import/no-unresolved': 1,
@@ -25,6 +25,7 @@ module.exports = {
     'react/button-has-type': 0,
     'react/jsx-first-prop-new-line': [1, 'multiline'],
     'react/jsx-closing-bracket-location': [1, 'tag-aligned'],
+    'no-unused-vars': 'warn',
     'react/jsx-max-props-per-line': [
       1,
       {
