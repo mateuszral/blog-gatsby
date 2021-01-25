@@ -50,7 +50,7 @@ const NavigationList = styled.ul`
 
 const NavigationListItem = styled.li`
   font-weight: ${({ theme }) => theme.font.styles.semiBold};
-  font-size: ${({ theme }) => theme.font.size.button};
+  font-size: ${({ theme }) => theme.font.size.paragraph};
   margin: 20px 0;
 
   ${({ theme }) => theme.mq.bigTablet} {

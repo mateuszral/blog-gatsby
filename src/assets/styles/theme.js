@@ -23,8 +23,8 @@ export const font = {
   size: {
     header: '4.5rem',
     logo: '2rem',
-    paragraph: '1.7rem',
-    button: '1.5rem',
+    paragraph: '1.5rem',
+    button: '1.3rem',
   },
   styles: {
     regular: '400',
