@@ -28,6 +28,7 @@ export const font = {
   },
   styles: {
     regular: '400',
+    semiBold: '600',
     bold: '700',
     black: '900',
   },
