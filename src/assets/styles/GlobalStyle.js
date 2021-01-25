@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import 'vendors/normalize.css';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyleHome = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 1.6rem;
     font-family: 'Montserrat', sans-serif;
-    padding: 100px 0 0;
   }
 
   h1, h2, h3, h4, h5, span {
@@ -37,4 +36,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;
+export const GlobalStyle = createGlobalStyle`
+  body {
+    padding-top: 100px;
+  }
+`;
