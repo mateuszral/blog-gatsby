@@ -15,7 +15,7 @@ const StyledHamburger = styled.button`
   transition: transform 0.3s ease-in-out;
   z-index: ${({ theme }) => theme.zIndex.level1};
 
-  ${({ theme }) => theme.mq.bigTablet} {
+  ${({ theme }) => theme.mq.tablet} {
     display: none;
   }
 `;

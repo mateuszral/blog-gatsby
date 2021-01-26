@@ -15,7 +15,7 @@ const NavigationWrapper = styled.nav`
   transform: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? 'translateX(0%)' : 'translateX(100%)')};
   transition: transform 0.3s ease-in-out;
 
-  ${({ theme }) => theme.mq.bigTablet} {
+  ${({ theme }) => theme.mq.tablet} {
     transform: none;
     padding: 10px 30px;
     display: flex;
@@ -40,7 +40,7 @@ const NavigationList = styled.ul`
   align-items: center;
   justify-content: center;
 
-  ${({ theme }) => theme.mq.bigTablet} {
+  ${({ theme }) => theme.mq.tablet} {
     background-color: ${({ theme }) => theme.white};
     color: ${({ theme }) => theme.black};
     height: initial;
@@ -54,7 +54,7 @@ const NavigationListItem = styled.li`
   font-size: ${({ theme }) => theme.font.size.paragraph};
   margin: 20px 0;
 
-  ${({ theme }) => theme.mq.bigTablet} {
+  ${({ theme }) => theme.mq.tablet} {
     margin-left: 40px;
   }
 `;
