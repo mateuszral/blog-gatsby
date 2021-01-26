@@ -11,11 +11,11 @@ import Navigation from 'components/Navigation/Navigation';
 import { routes } from 'routes';
 
 const MainTemplate = ({ children, location }) => {
-  const homepage = location.pathname === routes.home;
+  const homepageOrAbout = location.pathname === routes.home || location.pathname === routes.about;
   return (
     <>
       <Helmet lang="pl" title="Blog gatsby" />
-      {homepage ? (
+      {homepageOrAbout ? (
         <GlobalStyleHome />
       ) : (
         <>
