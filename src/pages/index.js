@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 import Button from 'components/Button/Button';
+import Header from 'components/Header/Header';
+import Paragraph from 'components/Paragraph/Paragraph';
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -34,9 +36,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const StyledHeading = styled.h1`
-  font-size: ${({ theme }) => theme.font.size.header};
-
+const StyledHeading = styled(Header)`
   ${({ theme }) => theme.mq.bigTablet} {
     align-items: flex-end;
     font-size: ${({ theme }) => theme.font.size.bigHeader};
@@ -45,12 +45,10 @@ const StyledHeading = styled.h1`
   }
 `;
 
-const StyledParagraph = styled.p`
-  padding: 0 50px;
+const StyledParagraph = styled(Paragraph)`
   margin: 20px 0 40px;
 
   ${({ theme }) => theme.mq.bigTablet} {
-    padding: 0;
     width: 30%;
   }
 `;
