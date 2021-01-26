@@ -1,47 +1,67 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+
 import Button from 'components/Button/Button';
 
 const StyledWrapper = styled.div`
-  width: 100%;
-  /* height: calc(200vh - 100px); */
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 3fr;
+  max-height: 150vh;
+
+  ${({ theme }) => theme.mq.tablet} {
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 2fr;
+    position: relative;
+  }
 `;
 
 const ContentWrapper = styled.div`
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+
+  ${({ theme }) => theme.mq.bigTablet} {
+    padding: 0 25px 0 0;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+  }
 `;
 
 const StyledHeading = styled.h1`
-  font-size: 60px;
-  width: 100%;
-  text-align: center;
+  font-size: ${({ theme }) => theme.font.size.header};
+
+  ${({ theme }) => theme.mq.bigTablet} {
+    align-items: flex-end;
+    font-size: ${({ theme }) => theme.font.size.bigHeader};
+    width: 45%;
+    line-height: 0.9;
+  }
 `;
 
 const StyledParagraph = styled.p`
   padding: 0 50px;
   margin: 20px 0 40px;
-  width: 100%;
-  text-align: center;
+
+  ${({ theme }) => theme.mq.bigTablet} {
+    padding: 0;
+    width: 30%;
+  }
 `;
 
 const StyledImg = styled(Img)`
-  /* position: absolute !important; */
   top: 20px;
-  right: 0;
-  /* display: none; */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 
-  ${({ theme }) => theme.mq.bigTablet} {
-    display: block;
+  ${({ theme }) => theme.mq.tablet} {
+    top: 0;
+    height: 100vh;
+    z-index: ${({ theme }) => theme.zIndex.level2};
   }
 `;
 
@@ -61,6 +81,16 @@ const IndexPage = ({
     <StyledImg fluid={fluid} />
   </StyledWrapper>
 );
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export const query = graphql`
   {
