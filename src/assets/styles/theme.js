@@ -21,6 +21,7 @@ export const colors = {
 
 export const font = {
   size: {
+    bigHeader: '10rem',
     header: '4.8rem',
     logo: '2rem',
     paragraph: '1.6rem',
