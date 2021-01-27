@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import Hamburger from 'components/Hamburger/Hamburger';
+import Hamburger from 'components/atoms/Hamburger/Hamburger';
 
 import { routes } from 'routes';
 

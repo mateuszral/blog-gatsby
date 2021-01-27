@@ -4,8 +4,8 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-import Header from 'components/Header/Header';
-import Paragraph from 'components/Paragraph/Paragraph';
+import Header from 'components/atoms/Header/Header';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const aboutText =
   'Architectural design is primarily driven by the holistically creative manipulation of mass, space, volume, texture, light, shadow, materials, program, and Realistic elements such as cost, construction and technology, in order to achieve an end which is aesthetic, functional and often artistic. This distinguishes Architecture from engineering design, which is usually driven primarily by the creative application of mathematical and scientific principles.';

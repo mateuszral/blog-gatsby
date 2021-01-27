@@ -4,9 +4,9 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
-import Button from 'components/Button/Button';
-import Header from 'components/Header/Header';
-import Paragraph from 'components/Paragraph/Paragraph';
+import Button from 'components/atoms/Button/Button';
+import Header from 'components/atoms/Header/Header';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const StyledWrapper = styled.div`
   display: grid;

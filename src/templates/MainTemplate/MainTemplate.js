@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import { GlobalStyle, GlobalStyleHome } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
 
-import Navigation from 'components/Navigation/Navigation';
+import Navigation from 'components/organisms/Navigation/Navigation';
 
 import { routes } from 'routes';
 
