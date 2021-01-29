@@ -18,6 +18,7 @@ const NavigationWrapper = styled.nav`
   ${({ theme }) => theme.mq.tablet} {
     transform: none;
     padding: 10px 30px;
+    background: ${({ theme }) => theme.white};
     display: flex;
     align-items: center;
     justify-content: center;
