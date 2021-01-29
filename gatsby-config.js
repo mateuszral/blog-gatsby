@@ -81,7 +81,7 @@ module.exports = {
         fonts: [
           {
             family: `Montserrat`,
-            variants: [`400`, `600`, `700`, `900`],
+            variants: [`400`, `600`, `700`, '900'],
           },
         ],
       },
@@ -92,6 +92,12 @@ module.exports = {
         rule: {
           include: path.join(__dirname, 'src/assets'),
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.API_DATO_CMS_KEY,
       },
     },
   ],
