@@ -16,12 +16,11 @@ const StyledWrapper = styled.div`
   ${({ theme }) => theme.mq.tablet} {
     grid-template-rows: 1fr;
     grid-template-columns: 3fr 2fr;
-    position: relative;
+    max-height: calc(100vh - 80px);
   }
 `;
 
 const ContentWrapper = styled.div`
-  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,10 +28,10 @@ const ContentWrapper = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mq.bigTablet} {
-    padding: 0 25px 0 0;
+    margin-top: -80px;
+    padding-right: 45px;
     justify-content: center;
     align-items: flex-end;
-    text-align: right;
   }
 `;
 
@@ -42,14 +41,14 @@ const StyledHeading = styled(Header)`
     font-size: ${({ theme }) => theme.font.size.bigHeader};
     width: 45%;
     line-height: 0.9;
+    text-align: right;
   }
 `;
 
 const StyledParagraph = styled(Paragraph)`
-  margin: 20px 0 40px;
-
   ${({ theme }) => theme.mq.bigTablet} {
     width: 30%;
+    text-align: right;
   }
 `;
 
@@ -57,8 +56,8 @@ const StyledImg = styled(Img)`
   top: 20px;
 
   ${({ theme }) => theme.mq.tablet} {
-    top: 0;
-    height: 100vh;
+    top: -80px;
+    height: calc(100% + 80px);
     z-index: ${({ theme }) => theme.zIndex.level2};
   }
 `;
