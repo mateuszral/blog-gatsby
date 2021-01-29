@@ -23,6 +23,7 @@ export const font = {
   size: {
     bigHeader: '10rem',
     header: '4.8rem',
+    articleHeader: '2.6rem',
     logo: '2rem',
     paragraph: '1.6rem',
     button: '1.3rem',
