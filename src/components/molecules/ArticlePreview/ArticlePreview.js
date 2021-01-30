@@ -47,12 +47,12 @@ const StyledImg = styled(Img)`
   object-fit: cover;
 `;
 
-const ArticlePreview = ({ title, image, slug, createdAt }) => (
+const ArticlePreview = ({ title, image, slug, updatedAt }) => (
   <ArticleWrapper as={Link} to={slug}>
     <StyledImg fluid={image} />
     <PreviewInfoLabel>
       <StyledHeading>{title}</StyledHeading>
-      <StyledParagraph>{createdAt}</StyledParagraph>
+      <StyledParagraph>{updatedAt}</StyledParagraph>
     </PreviewInfoLabel>
   </ArticleWrapper>
 );
@@ -61,7 +61,7 @@ ArticlePreview.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])).isRequired,
   slug: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
+  updatedAt: PropTypes.string.isRequired,
 };
 
 export default ArticlePreview;

@@ -50,13 +50,13 @@ const ArticlesPage = ({
       real.
     </StyledParagraph>
     <ContentWrapper>
-      {nodes.map(({ title, featuredImage: { fluid }, meta: { createdAt } }) => (
+      {nodes.map(({ title, featuredImage: { fluid }, meta: { updatedAt } }) => (
         <ArticlePreview
           key={title}
           title={title}
           image={fluid}
           slug={slugify(title, { lower: true })}
-          createdAt={createdAt}
+          updatedAt={updatedAt}
         />
       ))}
     </ContentWrapper>
@@ -74,29 +74,13 @@ ArticlesPage.propTypes = {
               .isRequired,
           }).isRequired,
           meta: PropTypes.shape({
-            createdAt: PropTypes.string.isRequired,
+            updatedAt: PropTypes.string.isRequired,
           }).isRequired,
         }).isRequired
       ).isRequired,
     }).isRequired,
   }).isRequired,
 };
-
-// ArticlesPage.propTypes = {
-//   data: PropTypes.shape({
-//     allDatoCmsArticle: PropTypes.shape({
-//       nodes: PropTypes.shape({
-//         title: PropTypes.string.isRequired,
-//         author: PropTypes.string.isRequired,
-//         meta: PropTypes.shape({ createdAt: PropTypes.string.isRequired }).isRequired,
-//         featuredImage: PropTypes.shape({
-//           fluid: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
-//             .isRequired,
-//         }).isRequired,
-//       }).isRequired,
-//     }).isRequired,
-//   }).isRequired,
-// };
 
 export const query = graphql`
   {
@@ -105,7 +89,7 @@ export const query = graphql`
         title
         author
         meta {
-          createdAt(formatString: "DD.MM.YYYY")
+          updatedAt(formatString: "DD/MM/YYYY")
         }
         featuredImage {
           fluid(maxWidth: 390, maxHeight: 240) {

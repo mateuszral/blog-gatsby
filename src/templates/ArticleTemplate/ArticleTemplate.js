@@ -55,7 +55,7 @@ const ArticleTemplate = ({
       author,
       title,
       articleContent,
-      meta: { createdAt },
+      meta: { updatedAt },
       featuredImage: { fluid },
     },
   },
@@ -66,7 +66,7 @@ const ArticleTemplate = ({
     <StyledWrapper>
       <StyledHeader>{title}</StyledHeader>
       <StyledParagraph>{author}</StyledParagraph>
-      <StyledParagraph>Created {createdAt}</StyledParagraph>
+      <StyledParagraph>{updatedAt}</StyledParagraph>
       <StyledImg fluid={fluid} />
       {articleContent.map((item) => {
         const itemKey = Object.keys(item)[1];
@@ -114,7 +114,7 @@ ArticleTemplate.propTypes = {
           .isRequired,
       }).isRequired,
       meta: PropTypes.shape({
-        createdAt: PropTypes.string.isRequired,
+        updatedAt: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,
@@ -126,7 +126,7 @@ export const query = graphql`
       title
       author
       meta {
-        createdAt(formatString: "DD.MM.YYYY")
+        updatedAt(formatString: "DD/MM/YYYY")
       }
       articleContent {
         ... on DatoCmsParagraph {
