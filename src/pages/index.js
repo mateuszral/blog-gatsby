@@ -5,9 +5,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 import Button from 'components/atoms/Button/Button';
-import Header from 'components/atoms/Header/Header';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import PageInfo from '../components/molecules/PageInfo/PageInfo';
+import PageInfo from 'components/molecules/PageInfo/PageInfo';
 
 const StyledWrapper = styled.div`
   display: grid;

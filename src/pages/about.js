@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-import Header from 'components/atoms/Header/Header';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 import PageInfo from 'components/molecules/PageInfo/PageInfo';
