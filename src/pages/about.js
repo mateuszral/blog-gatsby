@@ -7,15 +7,17 @@ import styled from 'styled-components';
 import Header from 'components/atoms/Header/Header';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
+import PageInfo from 'components/molecules/PageInfo/PageInfo';
+
 const StyledWrapper = styled.div`
   display: grid;
   grid-template-rows: 2fr 3fr;
-  max-height: 150vh;
+  height: 150vh;
 
   ${({ theme }) => theme.mq.tablet} {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    max-height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
   }
 `;
 
@@ -36,31 +38,33 @@ const ContentWrapper = styled.div`
 `;
 
 const ParagraphWrapper = styled.div`
-  ${({ theme }) => theme.mq.bigTablet} {
-    position: relative;
-    padding-top: 20px;
+  position: relative;
+  padding-top: 20px;
 
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      left: -100px;
-      width: calc(100% + 100px);
-      height: 4px;
-      background-color: ${({ theme }) => theme.black};
-    }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: -100px;
+    width: calc(100% + 100px);
+    height: 4px;
+    background-color: ${({ theme }) => theme.black};
+  }
 
-    &::before {
-      top: 10px;
-    }
+  &::before {
+    top: 10px;
+  }
 
-    &::after {
-      bottom: -10px;
-    }
+  &::after {
+    bottom: -10px;
   }
 `;
 
 const StyledParagraph = styled(Paragraph)`
+  ${({ theme }) => theme.mq.tablet} {
+    text-align: left;
+  }
+
   ${({ theme }) => theme.mq.bigTablet} {
     width: 80%;
     line-height: 1.6;
@@ -68,8 +72,6 @@ const StyledParagraph = styled(Paragraph)`
 `;
 
 const StyledImg = styled(Img)`
-  top: 20px;
-
   ${({ theme }) => theme.mq.tablet} {
     top: -80px;
     height: 100vh;
@@ -88,7 +90,7 @@ const AboutPage = ({
 }) => (
   <StyledWrapper>
     <ContentWrapper>
-      <Header>about</Header>
+      <PageInfo title="about" />
       <ParagraphWrapper>
         <StyledParagraph>{paragraphContent}</StyledParagraph>
         <StyledParagraph bold>{authorContent}</StyledParagraph>

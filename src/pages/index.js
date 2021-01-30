@@ -7,16 +7,17 @@ import Img from 'gatsby-image';
 import Button from 'components/atoms/Button/Button';
 import Header from 'components/atoms/Header/Header';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import PageInfo from '../components/molecules/PageInfo/PageInfo';
 
 const StyledWrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr 3fr;
-  max-height: 150vh;
+  height: 150vh;
 
   ${({ theme }) => theme.mq.tablet} {
     grid-template-rows: 1fr;
     grid-template-columns: 3fr 2fr;
-    max-height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
   }
 `;
 
@@ -32,23 +33,6 @@ const ContentWrapper = styled.div`
     padding-right: 45px;
     justify-content: center;
     align-items: flex-end;
-  }
-`;
-
-const StyledHeading = styled(Header)`
-  ${({ theme }) => theme.mq.bigTablet} {
-    align-items: flex-end;
-    font-size: ${({ theme }) => theme.font.size.bigHeader};
-    width: 45%;
-    line-height: 0.9;
-    text-align: right;
-  }
-`;
-
-const StyledParagraph = styled(Paragraph)`
-  ${({ theme }) => theme.mq.bigTablet} {
-    width: 30%;
-    text-align: right;
   }
 `;
 
@@ -71,8 +55,7 @@ const IndexPage = ({
 }) => (
   <StyledWrapper>
     <ContentWrapper>
-      <StyledHeading>Your new space</StyledHeading>
-      <StyledParagraph>While artists work from real to the abstract, architects must work from the abstract to the real.</StyledParagraph>
+      <PageInfo title="Your new space" homepage />
       <Button>estimate project</Button>
     </ContentWrapper>
     <StyledImg fluid={fluid} />
@@ -83,7 +66,8 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     file: PropTypes.shape({
       childImageSharp: PropTypes.shape({
-        fluid: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])).isRequired,
+        fluid: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+          .isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,

@@ -4,23 +4,13 @@ import styled from 'styled-components';
 import slugify from 'slugify';
 import { graphql } from 'gatsby';
 
-import Header from 'components/atoms/Header/Header';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-
 import ArticlePreview from 'components/molecules/ArticlePreview/ArticlePreview';
+import PageInfo from 'components/molecules/PageInfo/PageInfo';
 
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
-`;
-
-const StyledParagraph = styled(Paragraph)`
-  width: 100%;
-
-  ${({ theme }) => theme.mq.bigTablet} {
-    width: 25%;
-  }
 `;
 
 const ContentWrapper = styled.div`
@@ -44,11 +34,7 @@ const ArticlesPage = ({
   },
 }) => (
   <StyledWrapper>
-    <Header>articles</Header>
-    <StyledParagraph>
-      While artists work from real to the abstract, architects must work from the abstract to the
-      real.
-    </StyledParagraph>
+    <PageInfo title="articles" />
     <ContentWrapper>
       {nodes.map(({ title, featuredImage: { fluid }, meta: { updatedAt } }) => (
         <ArticlePreview
