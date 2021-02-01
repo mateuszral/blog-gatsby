@@ -45,18 +45,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Lorem ipsum`,
-    //     short_name: `Lorem ipsum`,
-    //     start_url: `/`,
-    //     background_color: '#FFD226',
-    //     theme_color: '#FFD226',
-    //     display: `minimal-ui`,
-    //     icon: `src/assets/images/favicon.png`,
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
@@ -64,15 +52,9 @@ module.exports = {
         pages: path.join(__dirname, 'src/pages'),
         components: path.join(__dirname, 'src/components'),
         templates: path.join(__dirname, 'src/components/templates'),
-        // sections: path.join(__dirname, 'src/components/sections'),
         assets: path.join(__dirname, 'src/assets'),
         routes: path.join(__dirname, 'src/routes'),
         vendors: path.join(__dirname, 'src/vendors'),
-        // utils: path.join(__dirname, 'src/utils'),
-        // contexts: path.join(__dirname, 'src/contexts'),
-        // providers: path.join(__dirname, 'src/providers'),
-        // hooks: path.join(__dirname, 'src/hooks'),
-        // helpers: path.join(__dirname, 'src/helpers'),
       },
     },
     {
