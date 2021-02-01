@@ -25,6 +25,7 @@ export const font = {
     header: '4.8rem',
     articleHeader: '2.6rem',
     logo: '2rem',
+    infoParagraph: '1.8rem',
     paragraph: '1.6rem',
     button: '1.3rem',
   },
