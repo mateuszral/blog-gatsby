@@ -68,7 +68,7 @@ const StyledForm = styled.form`
 
 const StyledLabel = styled.label`
   width: 100%;
-  font-size: 13px;
+  font-size: ${({ theme }) => theme.font.size.button};
   display: flex;
   flex-direction: column;
 
