@@ -17,6 +17,7 @@ const StyledHeader = styled(Header)`
 const StyledParagraph = styled(Paragraph)`
   ${({ theme }) => theme.mq.bigTablet} {
     width: 25vw;
+    font-size: ${({ theme }) => theme.font.size.infoParagraph};
     text-align: ${({ homepage }) => homepage && 'right'};
   }
 `;
